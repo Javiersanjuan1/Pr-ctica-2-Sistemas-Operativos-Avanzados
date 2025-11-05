@@ -1,7 +1,3 @@
-// procConcurrente.c
-// Compila en Linux/WSL/macOS con procesos + memoria compartida (POSIX)
-// y en Windows con una ruta alternativa basada en hilos (para poder compilar).
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -30,10 +26,6 @@ static void print_sums(const fila_t *matriz) {
 }
 
 #ifdef _WIN32
-// ---------------------------
-// RUTA WINDOWS (plan B: hilos)
-// ---------------------------
-#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <process.h>  // _beginthreadex
 
